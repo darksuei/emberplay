@@ -5,7 +5,7 @@ import { ErrorBoundary, ProtectedRoute } from "../components";
 export const BaseRouter = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute children={Pages.Home()} />, // Why do we need to call this?
+    element: <ProtectedRoute children={<Pages.Home />} />,
     errorElement: <ErrorBoundary />,
   },
 ]);

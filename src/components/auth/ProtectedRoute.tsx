@@ -4,14 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { Loader } from "../loader";
 import { ErrorBoundary } from "../error";
 import { ProtectedRouteProps } from "./types";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/auth";
 
 export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const { isAuthenticated, isLoading, error, loginWithRedirect, user } = useAuth0();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!isAuthenticated && !isLoading && !error && !user) {
       loginWithRedirect();
+    }
+    if (isAuthenticated) {
+      dispatch(login(user));
     }
   }, [isAuthenticated, isLoading, loginWithRedirect, navigate]);
 
