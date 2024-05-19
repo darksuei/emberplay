@@ -3,7 +3,13 @@ import { Triangle } from "react-loader-spinner";
 
 export const Loader = () => {
   return (
-    <Flex height='100vh' width='100vw' justifyContent='center' alignItems='center'>
+    <Flex
+      height='100vh'
+      width='100vw'
+      justifyContent='center'
+      alignItems='center'
+      className='bg-white dark:bg-primaryBlack'
+    >
       <Triangle
         visible={true}
         height='100'

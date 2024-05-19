@@ -1,13 +1,11 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
 import { Layout } from "../../components";
 
 export const Home = () => {
-  const user = useSelector((state: RootState): any => state.auth.user);
-  console.log(user);
   return (
     <Layout>
-      <h1>Home Page</h1>
+      <div className='h-screen w-full flex items-center justify-center'>
+        <h1>Still Under Construction!!!</h1>
+      </div>
     </Layout>
   );
 };

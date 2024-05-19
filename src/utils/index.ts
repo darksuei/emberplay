@@ -1,1 +1,3 @@
-// Export all files in the current folder
+export function capitalizeFirstLetter(word?: string) {
+  return word ? word.charAt(0).toUpperCase() + word.slice(1) : "";
+}
